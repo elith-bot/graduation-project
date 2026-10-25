@@ -1,3 +1,5 @@
+<div dir="rtl">
+
 # Engine
 
 التقنية المعتمدة: Python.
@@ -11,3 +13,5 @@
 المرجع: [الهيكلية](../docs/ARCHITECTURE.md)، [العقود](../contracts/README.md)، [طريقة العمل](../CONTRIBUTING.md).
 
 التصميم التفصيلي في [قواعد المحرك والهجين](../docs/ENGINE_RULES.md): خمس قواعد أولاً، ثم خصائص وتنبؤ ML في Shadow Mode وسياسة قرار مفسرة. لا يضم هذا المجلد حالياً كوداً منفذاً. تحويل حقول Wazuh يبقى داخل integrations؛ لا يكرر هنا normalizer خاص بالمصدر.
+
+</div>

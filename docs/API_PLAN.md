@@ -1,3 +1,5 @@
+<div dir="rtl">
+
 # خطة API أولية
 
 مقترح تخطيط قبل تنفيذ T01/T02، لا endpoints موجودة حالياً ولا عقد نهائي. مصدر نماذج الحقول [contracts](../contracts/README.md). الأصل نفسه يخدم HTML/CSS/JavaScript، والبيانات JSON عبر /api/.
@@ -25,3 +27,5 @@
 - تظل بيانات credentials والإعدادات الحساسة خارج responses والسجلات العامة.
 
 تتفق frontend وbackend وengine على عقودها أولاً، وتستخدم الواجهة أمثلة العقد بدلاً من تخمين الحقول.
+
+</div>
