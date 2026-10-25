@@ -26,6 +26,25 @@
 
 هذه متطلبات للعقد القادم وليست مخطط JSON معتمداً بعد؛ أمثلة أسماء الحقول هنا إرشادية. المرجع السلوكي [قواعد المحرك](../docs/ENGINE_RULES.md).
 
-## مراجعة التغيير
+## متطلبات عقود المنصة الموحدة
+
+عقود JSON التالية هدف تصميم؛ أول مهمة T01 تحول الحد الأدنى منها إلى مخططات وأمثلة قابلة للتحقق. لا تدعي هذه القائمة وجود API منفذ أو schema نهائية.
+
+| الكيان | الحقول المطلوبة منطقياً |
+|---|---|
+| EvidenceAssessment | incident_id، requirement_id، حالة الدليل، المصدر، السبب، الأوقات، evidence_ids |
+| CoverageAssessment | asset_id، scenario_id، الحالة، valid_from/valid_until، وقت التقييم، config_version، test_run_ids، نطاق القيود |
+| DetectionComponent | component_id، type، asset/scope، حالته المرصودة ووقت رصدها ومصدرها |
+| DetectionPath | path_id، scenario_id، المكونات المطلوبة، نقطة النجاح، شروط الحقول، دليل الاختبار وإصدار الخريطة |
+| TestRun | test_id، النشاط المتوقع، المدخل، الفشل المفروض، نقطة الرصد، الفعلي، timeout، الإعداد، evidence_ids، موافقة/استعادة |
+| FailureSimulation | graph_version، failure_components، حد k، حدود النموذج، المسارات المتأثرة والناجية وunknown، simulated=true |
+| Recommendation | نوع repair/resilience، المشكلة، المكونات، التغيير المقترح، نطاق الحماية، الكلفة ومصدرها، شروط التحقق |
+| Verification | before/after test_ids، تطابق السيناريو والعطل، النتيجة والقيود، التحسن المقاس أو unverified |
+
+أول مجموعة تنفيذية: Alert وIncident وEvidenceAssessment وCoverageAssessment مع عينة؛ بقية المخططات قبل تنفيذ وحدة الصمود. كل مخرج يحمل schema_version ومعرفات ثابتة قابلة للتتبع. الحالات المصطلحية مصدرها [التسلسل](../docs/SYSTEM_FLOW.md)؛ لا نساوي checklist الدليل مع حالة coverage أو priority أو judgment.
+
+نتيجة تغطية اليوم لا تؤكد فترة أمس؛ لا يقبل مرجع test_id دون ضبط الجهاز والسيناريو والإصدار والفترة. لا نعلن missing_telemetry إذا غاب الحقل فقط؛ نميز التأخر والصلاحيات وعدم التهيئة وعدم المعرفة.
+
+## مراجعة التغيير المشترك
 
 أي تغيير يراجع من أصحاب الأجزاء المنتجة والمستهلكة. التغيير غير المتوافق يوضح أثره وخطة تحديث المكونات، وتحدث العينات والمخططات والتوثيق ضمن طلب الدمج نفسه.
