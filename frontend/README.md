@@ -1,3 +1,5 @@
+<div dir="rtl">
+
 # Frontend
 
 التقنية المعتمدة: HTML + CSS + JavaScript دون React أو TypeScript أو خطوة بناء.
@@ -11,3 +13,5 @@
 التنظيم المستهدف عند التنفيذ: index.html، وcss/styles.css، وjs/api.js للاتصال، وjs/alerts.js وjs/incidents.js للعرض، وassets/ للموارد. هذه أسماء تنظيمية مقترحة وليست ملفات تطبيق منفذة بعد.
 
 المرجع: [الهيكلية](../docs/ARCHITECTURE.md)، [العقود](../contracts/README.md)، [طريقة العمل](../CONTRIBUTING.md).
+
+</div>
